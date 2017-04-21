@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>简单倒计时</title>
+	</head>
+	<body>
+		<h1>简单倒计时</h1>
+		<form>
+			<input type="text" id="txt"/>
+			<input type="button" id="start" value="开始"/>
+			<input type="button" id="stop" value="停止" />
+			<input type="button" id="reset" value="重置" />
+		</form>
+		
+		<script>
+			document.getElementById('start').onclick=function(){start()};
+			document.getElementById("stop").onclick=function(){stop()};
+			document.getElementById("reset").onclick=function(){reset()};
+			
+			var t;
+			function start(){
+				var c = document.getElementById('txt').value;
+				if(c!=0){
+					c-=1;
+					t=setTimeout("start()",1000)
+				}
+				document.getElementById('txt').value=c;
+			}
+			function stop(){
+				setTimeout("document.getElementById('txt').value=c",0);
+				clearTimeout(t);
+			}
+			function reset(){
+				c=0;
+				setTimeout("document.getElementById('txt').value=0",0);
+				clearTimeout(t);
+			}
+		</script>
+	</body>
+</html>
