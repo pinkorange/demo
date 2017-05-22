@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>第一次使用AngularJs</title>
+		 <script src="http://code.angularjs.org/angular-1.0.1.min.js"></script>
+	</head>
+	<body>
+		<p>第一个AngularJs案例：</p>
+		
+		<div ng-app="myApp" ng-controller="myDemo">
+			姓名：<input type="text" ng-model="name" /><br>
+			爱好：<input type="text" ng-model="like" /><br>
+			<br>
+			Hello: {{name + " 爱好: " + like}}
+		</div>
+		
+		<script>
+			var app = angular.module('myApp',[]);
+			app.controller('myDemo', function($scope){
+				$scope.name= "juzi";
+				$scope.like= "看书";
+			})
+		</script>
+		
+	</body>
+</html>
